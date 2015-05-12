@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Sigmod-programming-contest2013 by mple</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Sigmod-programming-contest2013</h1>
+        <p class="header"></p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/mple/sigmod-programming-contest2013/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mple/sigmod-programming-contest2013/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mple/sigmod-programming-contest2013">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mple">mple</a></p>
+
+
+      </header>
+      <section>
+        <p>SIGMOD Programming Contest 2013</p>
+
+<p>(a)TeamName: Mple</p>
+
+<p>(b)Members:</p>
+
+<p>Alexander Sibetheros, <a href="mailto:sdi0900261@di.uoa.gr">sdi0900261@di.uoa.gr</a>, University of Athens, Department of Informatics and Telecommunications, Undergraduate Student<br>
+John Chronis, <a href="mailto:sdi0900125@di.uoa.gr">sdi0900125@di.uoa.gr</a>, University of Athens, Department of Informatics and Telecommunications, Undergraduate Student<br>
+Evangelos Nikolopoulos, <a href="mailto:sdi0900089@di.uoa.gr">sdi0900089@di.uoa.gr</a>, University of Athens, Department of Informatics and Telecommunications, Undergraduate Student<br>
+Stavros Petsalakis, <a href="mailto:sdi0900236@di.uoa.gr">sdi0900236@di.uoa.gr</a>, University of Athens, Department of Informatics and Telecommunications, Undergraduate Student
+Dimitrianos Savva <a href="mailto:sdi0900018@di.uoa.gr">sdi0900018@di.uoa.gr</a>, University of Athens, Department of Informatics and Telecommunications, Undergraduate Student  </p>
+
+<p>(c)Supervisor:</p>
+
+<p>Herald Kllapi, <a href="mailto:herald@di.uoa.gr">herald@di.uoa.gr</a>, Department of Informatics and Telecommunications,Phd Student </p>
+
+<p>(d)Brief Description</p>
+
+<p>We observed a big overlap in queries, tokens and documents. The unique document words are arriving in a linear fashion. This is also true for the unique query words(tokens). So we instrumented our code to de-duplicate queries as whole. Tokens and document words are saved uniquely. So by having two different managers ( one for tokens and one for tokens) we compress the data,
+We use a job scheduling approach to organize the threads.
+We store relations between document words and query tokens based on the type of matching (edit, hamming,exact and 1,2,3). 
+When a document token or query token arrives we search for it in our managers, if it has not already arrived  we insert into our hashmaps  deletion neighborhoods of that token. 
+When we proccess new token word and query token we create new relations between tokens and words.
+The final step is to access our relation and extract which tokens match the document words that are active in a particular batch, after that we create the result that we return.
+Our implementation is based on words and token worlds that evolve through time. In every batch we need  to compute relations of new words and tokens which are the Delta of our world and the tokens and words of the current batch. </p>
+
+<p>(e)Third Party Code
+-Google Sparse Hash  <a href="http://code.google.com/p/sparsehash/">http://code.google.com/p/sparsehash/</a> New BSD License
+-Google MurMurh Hashing Algorithm <a href="http://code.google.com/p/smhasher/">http://code.google.com/p/smhasher/</a> MIT License</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
